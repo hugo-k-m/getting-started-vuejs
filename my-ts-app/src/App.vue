@@ -10,9 +10,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+interface State {
+  inputText: string;
+}
+
 export default defineComponent({
   name: 'App',
-  data: () => {
+  data: (): State => {
     return { inputText: '' }
   },
   methods: {
@@ -21,7 +25,7 @@ export default defineComponent({
     }
   },
   computed: {
-    count() {
+    count(): number {
       return this.inputText.length
     }
   }
