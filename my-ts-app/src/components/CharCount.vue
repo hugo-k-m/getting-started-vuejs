@@ -1,5 +1,5 @@
 <template>
-  <div -d="char-count">
+  <div id="char-count">
     <p>{{ params.label }}: {{ count }}</p>
   </div>
 </template>
@@ -8,8 +8,8 @@
 import { defineComponent, PropType } from 'vue';
 
 export interface CharCountParams {
-  label: string,
-  inputText: string
+  label: string;
+  inputText: string;
 }
 
 export default defineComponent({

@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import CharCount, { CharCountParams } from './components/CharCount.vue'
+import CharCount, { CharCountParams } from './components/CharCount.vue';
 
 interface State {
   inputText: string;
@@ -30,7 +30,7 @@ export default defineComponent({
     charCountParams(): CharCountParams {
       return {
         inputText: this.inputText,
-        label: 'Count'
+        label: 'Count',
       }
     }
   }
