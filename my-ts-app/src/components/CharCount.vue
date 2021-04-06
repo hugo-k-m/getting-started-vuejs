@@ -1,27 +1,28 @@
 <template>
   <div -d="char-count">
-    <p>{{ label }}: {{ count }}</p>
+    <p>{{ params.label }}: {{ count }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
+
+export interface CharCountParams {
+  label: string,
+  inputText: string
+}
 
 export default defineComponent({
   name: 'CharCount',
   props: {
-    inputText: {
-      type: String,
-      required: true
-    },
-    label: {
-      type: String,
+    params: {
+      type: Object as PropType<CharCountParams>,
       required: true,
     }
   },
   computed: {
     count(): number {
-      return this.inputText.length
+      return this.params.inputText.length
     }
   }
 });
