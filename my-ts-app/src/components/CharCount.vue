@@ -9,7 +9,16 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'CharCount',
-  props: ['inputText', 'label'],
+  props: {
+    inputText: {
+      type: String,
+      required: true
+    },
+    label: {
+      type: String,
+      required: true,
+    }
+  },
   computed: {
     count(): number {
       return this.inputText.length
